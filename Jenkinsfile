@@ -4,7 +4,8 @@ pipeline {
         stage('Initialize'){
             steps {
                 def dockerHome = tool 'myDocker'
-                env.PATH = "${dockerHome}/bin:${env.PATH}"                }
+                env.PATH = "${dockerHome}/bin:${env.PATH}"                
+                }
             }
     environment {
         registryCredential = 'dockerhub'
@@ -66,4 +67,5 @@ pipeline {
             }
         }
     }
+}
 }
