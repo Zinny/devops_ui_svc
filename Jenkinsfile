@@ -56,11 +56,7 @@ pipeline {
                     echo 'push the image to docker hub' 
                 }
              }
-        } 
-        dependencies {
-        classpath "com.android.tools.build:gradle:7.0.1"
-       
-               }    
+        }  
         stage('Remove local docker image') {
             steps{
                 script {
