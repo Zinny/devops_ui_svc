@@ -16,7 +16,7 @@ pipeline {
             }
             steps {
                 echo 'Retrieve source from github. run npm install and npm test' 
-                git branch: 'master',
+                git branch: 'main',
                     url: 'https://github.com/Zinny/devops_ui_svc.git'
                 echo 'repo files'
                 sh 'ls -a'
