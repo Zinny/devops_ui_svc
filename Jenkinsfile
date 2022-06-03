@@ -37,6 +37,7 @@ pipeline {
                     echo 'push the image to docker hub'
                     docker.withRegistry('',registryCredential){
                         dockerImage.push("${env.BUILD_ID}")
+                  }
                 }
             }
         }     
