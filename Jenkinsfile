@@ -25,14 +25,18 @@ pipeline {
         stage('Building image') {
             steps{
                 script {
-                    echo 'build the image' 
+                    echo 'build the image'
+		    dockerImage = docker.build("${env.imageName}:${env.BUILD_ID}")
+                    echo 'image built'
                 }
             }
             }
         stage('Push Image') {
             steps{
                 script {
-                    echo 'push the image to docker hub' 
+                    echo 'push the image to docker hub'
+                    docker.withRegistry('',registryCredential){
+                        dockerImage.push("${env.BUILD_ID}")
                 }
             }
         }     
