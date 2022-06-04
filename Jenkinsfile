@@ -54,14 +54,8 @@ pipeline {
                 echo 'Get cluster credentials'
                 sh 'gcloud container clusters get-credentials cinny-app-cluster --zone us-west1-b --project inlaid-stack-352300'
                 sh "kubectl set image deployment/devops_ui_svc ui_svc-container=${env.imageName}:${env.BUILD_ID}"
-             }
-        }     
-            steps {
-                script {
-                    echo 'push the image to docker hub' 
-                }
-             }
-        }  
+              }
+            }       
         stage('Remove local docker images') {
             steps{
                 script {
