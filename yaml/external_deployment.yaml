@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: devops_ui_svc
+  name: devops-ui-svc
 spec:
   selector:
     matchLabels:
