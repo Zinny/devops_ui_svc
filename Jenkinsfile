@@ -62,7 +62,7 @@ pipeline {
                     echo 'push the image to docker hub' 
                 }
                 // sh "docker rmi $imageName:latest"
-                // sh "docker rmi $imageName:$BUILD_NUMBER"
+                sh "docker rmi $imageName:$BUILD_NUMBER"
             }
         }
     }
