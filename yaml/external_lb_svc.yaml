@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: external-lb-service
+spec:
+  type: LoadBalancer
+  selector:
+    app: ui-svc
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+
